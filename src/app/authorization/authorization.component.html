@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="login-container">
+        <app-login *ngIf="view == 'login'"></app-login>
+        <app-signup *ngIf="view == 'signup'"></app-signup>
+    </div>
+    <p *ngIf="view == 'login'">Don't have an account?&nbsp;<span><button (click)="onChangeView()">Sign up</button></span></p>
+    <p *ngIf="view == 'signup'">Already have an account?&nbsp;<span><button (click)="onChangeView()">Sign in</button></span></p>
+</div>

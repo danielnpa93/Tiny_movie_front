@@ -1,0 +1,12 @@
+<h1>Sign up</h1>
+<form [formGroup]="rForm">
+    <ng-template ngFor let-item [ngForOf]="form" let-i="index">
+    <span class="p-float-label">
+        <input formControlName="{{item.name}}" name="{{item.name}}" id="{{item.name}}" type="{{item.type}}" [ngClass]="!rForm.controls[item.name].valid ? 'ng-invalid ng-dirty' : ''" pInputText>
+        <label for="{{item.name}}">{{item.label}}</label>
+    </span>
+        <small [hidden]="rForm.controls[item.name].valid || !rForm.controls[item.name].touched" id="{{item.name}}" class="p-error block">Field cannot be empty.</small>
+    </ng-template>
+    <button [loading]="isLoading" type="submit" (click)="onSignup()" label="Sign up" style="width: 100%;" pButton class="p-button-raised p-button-rounded"></button>
+</form>
+

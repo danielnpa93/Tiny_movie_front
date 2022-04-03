@@ -1,0 +1,5 @@
+<div class="toolbar">
+    <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-plain" (click)="menu.toggle($event)"></button>
+</div>
+
+<p-menu #menu [popup]="true" [model]="items"></p-menu>
